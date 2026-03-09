@@ -37,10 +37,10 @@ public class Bullet_Physics : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector3 location = collision.transform.position;
+        Vector2 position = bullet.transform.position;
+        damage_zone = Instantiate(damage_zone, position, bullet.transform.rotation);
         Destroy(gameObject);
-        Debug.Log("Bullet Destroy");
-        damage_zone = Instantiate(damage_zone,location, Quaternion.identity);
+       
         
     }
 }
