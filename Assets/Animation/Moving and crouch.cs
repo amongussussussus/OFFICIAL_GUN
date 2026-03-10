@@ -33,6 +33,14 @@ public class Movingandcrouch : MonoBehaviour
     private void FixedUpdate()
     {
         animator.SetBool("IsGround", IsGrounded());
+        if (IsGrounded()==true)
+        {
+            player_rb.linearDamping = 100;
+        }
+        else
+        {
+            player_rb.linearDamping = 0;
+        }
     }
     private void LeftRight()
     {
