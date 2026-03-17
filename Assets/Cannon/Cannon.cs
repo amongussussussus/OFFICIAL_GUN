@@ -20,20 +20,26 @@ public class Cannon : MonoBehaviour
     bool IsSummon =  true;
     float timer = 4;
     public int Power_scale = 0;
+    [SerializeField] Movingandcrouch player;
+    Animator animator;
     private void Awake()
     {
         Barrel = GetComponent<Transform>();
+        animator = GetComponent<Animator>();
 
     }
     private void Update()
     {
+        if (player.Get_Manned() == true)
         SummonProjectile();
         Power_Tuning();
     }
     private void FixedUpdate()
     {
-
-        Barrel.transform.rotation = UnityEngine.Quaternion.Euler(0,0,CannonLeverage());
+         if (player.Get_Manned() == true)
+         {
+             Barrel.transform.rotation = UnityEngine.Quaternion.Euler(0,0,CannonLeverage());
+         }      
         if (timer > 0)
         timer -=1*Time.deltaTime;
 
@@ -58,7 +64,8 @@ public class Cannon : MonoBehaviour
     {
         if(Keyboard.current.spaceKey.IsPressed() && timer <= 0)
         {
-            GameObject  bullet =  Instantiate(prefab, Barrel.transform.position,UnityEngine.Quaternion.Euler(Barrel.transform.eulerAngles + new UnityEngine.Vector3(0,0,-90)));
+            animator.SetTrigger("Fire");
+            GameObject  bullet =  Instantiate(prefab, Barrel.transform.position,UnityEngine.Quaternion.Euler(Barrel.transform.eulerAngles + new UnityEngine.Vector3(0,0,-90)),Barrel);
             Debug.Log("Summon");
             timer = 4;
 
@@ -71,17 +78,27 @@ public class Cannon : MonoBehaviour
     }
     public int Power_Tuning()
     {
-        if(Keyboard.current.upArrowKey.IsPressed() && Power_scale>=0)
+        if(Keyboard.current.upArrowKey.wasPressedThisFrame && Power_scale>=0)
         {
            Power_scale = Power_scale + 1;
            Debug.Log("UP");
         }
         
-        if(Keyboard.current.downArrowKey.IsPressed() && Power_scale>=0)
+        if(Keyboard.current.downArrowKey.wasPressedThisFrame && Power_scale>=0)
         {
            Power_scale -= 1;
            Debug.Log("Down");
         }
+        if(Power_scale <= 0)
+        {
+            Power_scale = 0;
+        }
         return Power_scale;
+    }
+    public UnityEngine.Vector2 ReturnAngle()
+    {
+        UnityEngine.Vector2 velocity_angle;
+        velocity_angle = new UnityEngine.Vector2(Mathf.Cos(angle * Mathf.Deg2Rad),Mathf.Sin(angle * Mathf.Deg2Rad));
+        return velocity_angle;
     }
 }

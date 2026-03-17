@@ -1,5 +1,6 @@
 using System.Drawing;
 using System.Runtime.CompilerServices;
+using JetBrains.Annotations;
 using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class Movingandcrouch : MonoBehaviour
     BoxCollider2D player_col;
     [SerializeField] private Animator animator;
 
-
+    bool IsManned = false;
     void Start()
     {
         player_rb = GetComponent<Rigidbody2D>();
@@ -28,6 +29,7 @@ public class Movingandcrouch : MonoBehaviour
         LeftRight();
         Jump();
         Crouch();
+        ExitVehicle();
     }
     private void FixedUpdate()
     {
@@ -35,7 +37,6 @@ public class Movingandcrouch : MonoBehaviour
         {
             animator.SetBool("IsGround", true);
         }
-        
     }
     private void LeftRight()
     {
@@ -83,4 +84,32 @@ public class Movingandcrouch : MonoBehaviour
 {
     return player_rb.linearVelocity.y == 0;
 }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("In zone");
+        if(collision.gameObject.GetComponent<Cannon>() != null && Keyboard.current.eKey.wasPressedThisFrame && IsManned == false)
+        {
+            gameObject.transform.SetParent(collision.gameObject.transform);
+            gameObject.transform.localPosition = new Vector2(0,0);
+            player_rb.constraints = RigidbodyConstraints2D.FreezePosition; 
+            IsManned = true;
+            Debug.Log("Manned");
+    
+        }
+    }
+    private void ExitVehicle()
+    {
+        if(IsManned == true && Keyboard.current.shiftKey.wasPressedThisFrame)
+        {
+            gameObject.transform.SetParent(null);
+            player_rb.constraints = RigidbodyConstraints2D.None;
+            gameObject.transform.rotation = Quaternion.Euler(0,0,0);
+            player_rb.freezeRotation = true;
+            IsManned = false;
+        }
+    }
+    public bool Get_Manned()
+    {
+        return IsManned;
+    }
 }

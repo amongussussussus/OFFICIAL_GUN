@@ -211,4 +211,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2065d3e189f9f45a8e4b1b9a665f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet_Physics
+  damage_zone: {fileID: 8942625150646275999, guid: 3b7ae94d8d1f76e4e9a2e936b4d7cb31, type: 3}
   cannon: {fileID: 0}

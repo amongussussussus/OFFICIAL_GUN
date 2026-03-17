@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Cooldowncount : MonoBehaviour
 {
     [SerializeField] private TextMeshPro cooldown;
+    [SerializeField] private TextMeshPro power_scale;
+
     Cannon cannon;
     void Awake()
     {
@@ -13,6 +15,7 @@ public class Cooldowncount : MonoBehaviour
     }
    void Update()
     {
-        cooldown.text = "Reload time" + cannon.Get_time();     
+        cooldown.text = "Reload time:" + cannon.Get_time(); 
+        power_scale.text = "Power scale:" + cannon.Power_Tuning();
     }
 }
