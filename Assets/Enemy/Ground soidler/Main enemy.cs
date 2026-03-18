@@ -1,7 +1,7 @@
 using System.Data.Common;
+using System.Diagnostics;
 using System.Threading;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
 
@@ -9,16 +9,19 @@ public class MainEnemy : MonoBehaviour
 {
     private Rigidbody2D enemy_rb;
     private float health = 100f;
-    [SerializeField] private Damage_zone damage;
+    [SerializeField] private GameObject loot_1, loot_2, loot_3;
     private float move_time = 10f;
     private float idle_time = 5f;
-    [SerializeField] TextMeshPro time_debug;
     [SerializeField] Animator animator;
+    Gamemaster gamemaster;
+    
     void Start()
     {
         enemy_rb = GetComponent<Rigidbody2D>();
         enemy_rb.freezeRotation = true;
+        gamemaster = FindAnyObjectByType<Gamemaster>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -53,27 +56,42 @@ public class MainEnemy : MonoBehaviour
                  move_time -= 1*Time.deltaTime;
                  idle_time = 5f;
             }
-        time_debug.text = "Move: " + move_time + "Idle: " + idle_time;
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Hit");
     }
     void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.GetComponent<Damage_zone>() != null)
         {
             Damage();
-            Debug.Log("In Damage zone");
         }
 
     }
     void Damage()
     {
         health -= 20;
-        Debug.Log("It hurt, it hurt" + health);
         if (health <= 0)
         {
+            int loot_ammount = Random.Range(1,5);
+            for(int i=0;i<loot_ammount;i++)
+            {
+                int loot_index = Random.Range(1,4);
+                switch (loot_index)
+                {
+                    case 1:
+                     GameObject loot1 = Instantiate(loot_1, enemy_rb.transform.position, enemy_rb.transform.rotation);
+                     break;
+                    case 2:
+                    GameObject loot2 = Instantiate(loot_2, enemy_rb.transform.position, enemy_rb.transform.rotation);
+                    break;
+                    case 3:
+                    GameObject loot3 = Instantiate(loot_3, enemy_rb.transform.position, enemy_rb.transform.rotation);
+                    break;
+
+                }   
+            } 
+            gamemaster.PlayerScore(20);
             Destroy(gameObject);
         }
     }

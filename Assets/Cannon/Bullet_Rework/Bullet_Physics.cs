@@ -11,6 +11,7 @@ public class Bullet_Physics : MonoBehaviour
     [SerializeField] GameObject damage_zone;
     private Cannon cannon;
     IDestroyable destroy;
+    [SerializeField] ParticleSystem system;
        void Start()
     {
         bullet_rb = GetComponent<Rigidbody2D>();
