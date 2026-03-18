@@ -1,5 +1,6 @@
 using System.Drawing;
 using System.Runtime.CompilerServices;
+using JetBrains.Annotations;
 using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,9 +13,8 @@ public class Movingandcrouch : MonoBehaviour
     Rigidbody2D player_rb;
     BoxCollider2D player_col;
     [SerializeField] private Animator animator;
-    private bool isGround;
-    private bool isCrouch;
 
+    bool IsManned = false;
     void Start()
     {
         player_rb = GetComponent<Rigidbody2D>();
@@ -29,10 +29,14 @@ public class Movingandcrouch : MonoBehaviour
         LeftRight();
         Jump();
         Crouch();
+        ExitVehicle();
     }
     private void FixedUpdate()
     {
-        animator.SetBool("IsGround", IsGrounded());
+        if(IsGrounded() == true)
+        {
+            animator.SetBool("IsGround", true);
+        }
     }
     private void LeftRight()
     {
@@ -59,6 +63,7 @@ public class Movingandcrouch : MonoBehaviour
     private void Jump()
     {
         float jumpForce = 200f;
+        
         if(Keyboard.current.spaceKey.IsPressed() && IsGrounded() == true)
         {
             player_rb.AddForce(player_rb.transform.up*jumpForce);
@@ -79,4 +84,32 @@ public class Movingandcrouch : MonoBehaviour
 {
     return player_rb.linearVelocity.y == 0;
 }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("In zone");
+        if(collision.gameObject.GetComponent<Cannon>() != null && Keyboard.current.eKey.wasPressedThisFrame && IsManned == false)
+        {
+            gameObject.transform.SetParent(collision.gameObject.transform);
+            gameObject.transform.localPosition = new Vector2(0,0);
+            player_rb.constraints = RigidbodyConstraints2D.FreezePosition; 
+            IsManned = true;
+            Debug.Log("Manned");
+    
+        }
+    }
+    private void ExitVehicle()
+    {
+        if(IsManned == true && Keyboard.current.shiftKey.wasPressedThisFrame)
+        {
+            gameObject.transform.SetParent(null);
+            player_rb.constraints = RigidbodyConstraints2D.None;
+            gameObject.transform.rotation = Quaternion.Euler(0,0,0);
+            player_rb.freezeRotation = true;
+            IsManned = false;
+        }
+    }
+    public bool Get_Manned()
+    {
+        return IsManned;
+    }
 }
