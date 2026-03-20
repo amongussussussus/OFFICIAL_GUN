@@ -1,0 +1,548 @@
+fileFormatVersion: 2
+guid: 25bbb5973cdb53144b1e2fc2daa9e8b9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4570531127297583730
+    second: Lock and load_0
+  - first:
+      213: 6566188980562192063
+    second: Lock and load_1
+  - first:
+      213: 7708705139728222589
+    second: Lock and load_2
+  - first:
+      213: 2484565361488071433
+    second: Lock and load_3
+  - first:
+      213: -3298077817405155770
+    second: Lock and load_4
+  - first:
+      213: 2833236644829445721
+    second: Lock and load_5
+  - first:
+      213: 6433731622627249782
+    second: Lock and load_6
+  - first:
+      213: -4725786452354517935
+    second: Lock and load_7
+  - first:
+      213: 7124799235616467818
+    second: Lock and load_8
+  - first:
+      213: -8405868964056409448
+    second: Lock and load_9
+  - first:
+      213: 3542547106308857864
+    second: Lock and load_10
+  - first:
+      213: -6808710939165135527
+    second: Lock and load_11
+  - first:
+      213: -4142758744097750058
+    second: Lock and load_12
+  - first:
+      213: 1219731660650456020
+    second: Lock and load_13
+  - first:
+      213: -6875137082745756197
+    second: Lock and load_14
+  - first:
+      213: 8503877565995759603
+    second: Lock and load_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lock and load_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2640
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e85df8ac7263290c0800000000000000
+      internalID: -4570531127297583730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2464
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb66e72b61acf1b50800000000000000
+      internalID: 6566188980562192063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2288
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d798abb6b72dafa60800000000000000
+      internalID: 7708705139728222589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2112
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b8cb05803fa7220800000000000000
+      internalID: 2484565361488071433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1936
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64658f3f2bfda32d0800000000000000
+      internalID: -3298077817405155770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1760
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ebda3a7bda15720800000000000000
+      internalID: 2833236644829445721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1584
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67e05eac2d4394950800000000000000
+      internalID: 6433731622627249782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1408
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1543e078242aa6eb0800000000000000
+      internalID: -4725786452354517935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1232
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6be4eee72f50e260800000000000000
+      internalID: 7124799235616467818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1056
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89adfe0a6ba585b80800000000000000
+      internalID: -8405868964056409448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 880
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 800a0afe2d7a92130800000000000000
+      internalID: 3542547106308857864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95deeb499799281a0800000000000000
+      internalID: -6808710939165135527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d309eb1fd6f186c0800000000000000
+      internalID: -4142758744097750058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d32e52ab7b5de010800000000000000
+      internalID: 1219731660650456020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd5e2d0df3b9690a0800000000000000
+      internalID: -6875137082745756197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock and load_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 984
+        height: 176
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f7379e3797d30670800000000000000
+      internalID: 8503877565995759603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2eb0b5aa58c5bcc4ebd0f83ad0c1945a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":16.0},"gridSpriteSize":{"x":984.0,"y":176.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.30000001192092898,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Lock and load_0: -4570531127297583730
+      Lock and load_1: 6566188980562192063
+      Lock and load_10: 3542547106308857864
+      Lock and load_11: -6808710939165135527
+      Lock and load_12: -4142758744097750058
+      Lock and load_13: 1219731660650456020
+      Lock and load_14: -6875137082745756197
+      Lock and load_15: 8503877565995759603
+      Lock and load_2: 7708705139728222589
+      Lock and load_3: 2484565361488071433
+      Lock and load_4: -3298077817405155770
+      Lock and load_5: 2833236644829445721
+      Lock and load_6: 6433731622627249782
+      Lock and load_7: -4725786452354517935
+      Lock and load_8: 7124799235616467818
+      Lock and load_9: -8405868964056409448
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
