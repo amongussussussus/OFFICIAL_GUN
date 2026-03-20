@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 
 public class Movingandcrouch : MonoBehaviour
 {
-
+    GameObject player;
     Rigidbody2D player_rb;
     BoxCollider2D player_col;
     [SerializeField] private Animator animator;
@@ -25,6 +25,7 @@ public class Movingandcrouch : MonoBehaviour
     bool IsManned = false;
     void Start()
     {
+        player = GetComponent<GameObject>();
         player_rb = GetComponent<Rigidbody2D>();
         player_col = GetComponent<BoxCollider2D>();
         player_rb.freezeRotation = true;
@@ -51,6 +52,12 @@ public class Movingandcrouch : MonoBehaviour
         {
             animator.SetBool("IsGround", true);
         }
+        if(IsManned == true)
+        {
+            player_rb.simulated = false;
+
+        }
+    
     }
     private void LeftRight(Vector2 move_direction)
     {
@@ -123,6 +130,7 @@ public class Movingandcrouch : MonoBehaviour
             gameObject.transform.rotation = Quaternion.Euler(0,0,0);
             player_rb.freezeRotation = true;
             IsManned = false;
+            player_rb.simulated = true;
         }
     }
     public bool Get_Manned()

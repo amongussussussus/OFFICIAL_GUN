@@ -1,3 +1,4 @@
+using System;
 using System.Numerics;
 using NUnit.Framework;
 using Unity.VisualScripting;
@@ -11,10 +12,9 @@ public class Bullet_Physics : MonoBehaviour
     [SerializeField] GameObject damage_zone;
     private Cannon cannon;
     IDestroyable destroy;
-       void Start()
+        void Start()
     {
         bullet_rb = GetComponent<Rigidbody2D>();
-        bullet_image = GetComponent<SpriteRenderer>();
         cannon = GetComponentInParent<Cannon>();
         bullet_rb.angularDamping = 0;
         bullet_rb.linearVelocity = cannon.ReturnAngle()*cannon.Power_Tuning();
@@ -34,12 +34,16 @@ public class Bullet_Physics : MonoBehaviour
         }
         if(collision.gameObject.GetComponentInChildren<Armore>() != null)
         {
+            AI amore = collision.gameObject.GetComponent<AI>();
             float impact_angel = UnityEngine.Vector2.Dot(-bullet_rb.transform.up, collision.gameObject.transform.up);
             
             if (impact_angel > 0.6)
             {
+                int damage = Mathf.RoundToInt(100*impact_angel);
                 Destroy(gameObject);
-                Debug.Log("Penetrated");
+                Debug.Log("Penetrated" + damage);
+                amore.Damage(damage);
+                
             }
             else
             {

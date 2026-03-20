@@ -20,10 +20,12 @@ public class Cannon : MonoBehaviour
     bool IsSummon =  true;
     float timer = 4;
     public int Power_scale = 0;
-    [SerializeField] Movingandcrouch player;
+    Movingandcrouch player;
     Animator animator;
+    bool IsLoaded = false;
     private void Awake()
     {
+        player = FindAnyObjectByType<Movingandcrouch>();
         Barrel = GetComponent<Transform>();
         animator = GetComponent<Animator>();
 
@@ -62,12 +64,13 @@ public class Cannon : MonoBehaviour
     }
    private void SummonProjectile()
     {
-        if(Keyboard.current.spaceKey.IsPressed() && timer <= 0)
+        if(Keyboard.current.spaceKey.IsPressed() && timer <= 0 && IsLoaded == true)
         {
             animator.SetTrigger("Fire");
             GameObject  bullet =  Instantiate(prefab, Barrel.transform.position,UnityEngine.Quaternion.Euler(Barrel.transform.eulerAngles + new UnityEngine.Vector3(0,0,-90)),Barrel);
             Debug.Log("Summon");
             timer = 4;
+            IsLoaded = false;
 
     }
     }
@@ -80,13 +83,13 @@ public class Cannon : MonoBehaviour
     {
         if(Keyboard.current.upArrowKey.wasPressedThisFrame && Power_scale>=0)
         {
-           Power_scale = Power_scale + 1;
+           Power_scale = Power_scale + 10;
            Debug.Log("UP");
         }
         
         if(Keyboard.current.downArrowKey.wasPressedThisFrame && Power_scale>=0)
         {
-           Power_scale -= 1;
+           Power_scale -= 10;
            Debug.Log("Down");
         }
         if(Power_scale <= 0)
@@ -100,5 +103,10 @@ public class Cannon : MonoBehaviour
         UnityEngine.Vector2 velocity_angle;
         velocity_angle = new UnityEngine.Vector2(Mathf.Cos(angle * Mathf.Deg2Rad),Mathf.Sin(angle * Mathf.Deg2Rad));
         return velocity_angle;
+    }
+    public void Loaded()
+    {
+        IsLoaded = true;
+        animator.SetTrigger("Loading");
     }
 }
