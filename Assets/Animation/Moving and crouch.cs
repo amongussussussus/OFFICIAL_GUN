@@ -13,14 +13,6 @@ public class Movingandcrouch : MonoBehaviour
     Rigidbody2D player_rb;
     BoxCollider2D player_col;
     [SerializeField] private Animator animator;
-    InputAction move_control;
-    InputAction jump_control;
-    
-    [SerializeField]
-    private float jump_force = 200f;
-    [SerializeField]
-    private float move_speed = 5f;
-    private Vector2 move_direction = Vector2.zero;
 
     bool IsManned = false;
     void Start()
@@ -28,22 +20,16 @@ public class Movingandcrouch : MonoBehaviour
         player = GetComponent<GameObject>();
         player_rb = GetComponent<Rigidbody2D>();
         player_col = GetComponent<BoxCollider2D>();
-        player_rb.freezeRotation = true;
-        move_control = InputSystem.actions.FindAction("Move");//get project setting input control
-        jump_control = InputSystem.actions.FindAction("Jump");
+        player_rb.freezeRotation = true; 
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(IsManned == false)
-        {
-            move_direction = move_control.ReadValue<Vector2>();
-        }
-        LeftRight(move_direction);
+        LeftRight();
         Jump();
-        Crouch(move_direction);
+        Crouch();
         ExitVehicle();
     }
     private void FixedUpdate()
@@ -59,22 +45,22 @@ public class Movingandcrouch : MonoBehaviour
         }
     
     }
-    private void LeftRight(Vector2 move_direction)
+    private void LeftRight()
     {
         animator.SetBool("IsMoving", false);
-        float moveSpeed = move_speed;
+        float moveSpeed = 5f;
         if (animator.GetBool("IsCrouch") == true)
         {
             moveSpeed = moveSpeed*0.5f;
         }
-        if(move_direction.x < 0)
+        if(Keyboard.current.aKey.IsPressed())
         {
             player_rb.linearVelocityX = -moveSpeed;
             animator.SetBool("IsMoving", true);
              player_rb.transform.localScale = new Vector3(-1,1,1);
         }
         
-        if(move_direction.x > 0)
+        if(Keyboard.current.dKey.IsPressed())
         {
             player_rb.linearVelocityX = moveSpeed;
             animator.SetBool("IsMoving", true);
@@ -83,20 +69,19 @@ public class Movingandcrouch : MonoBehaviour
     }
     private void Jump()
     {
-        float jumpForce = jump_force;
+        float jumpForce = 200f;
         
-        if(jump_control.IsPressed() == true && IsGrounded() == true)
+        if(Keyboard.current.spaceKey.IsPressed() && IsGrounded() == true)
         {
             player_rb.AddForce(player_rb.transform.up*jumpForce);
-            Debug.Log(player_rb.transform.up*jumpForce);
         }
 
     }
-    private void Crouch(Vector2 move_direction)
+    private void Crouch()
     {
         animator.SetBool("IsCrouch", false);
         player_col.size = new Vector2(0.5f,1.2f);
-        if(move_direction.y < 0)
+        if(Keyboard.current.sKey.IsPressed())
         {
             animator.SetBool("IsCrouch", true);
             player_col.size = new Vector2(0.5f,0.6f);
@@ -113,10 +98,8 @@ public class Movingandcrouch : MonoBehaviour
         {
             gameObject.transform.SetParent(collision.gameObject.transform);
             gameObject.transform.localPosition = new Vector2(0,0);
-            player_rb.transform.localScale = new Vector3(1,1,1);
-            player_rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            player_rb.constraints = RigidbodyConstraints2D.FreezePosition; 
             IsManned = true;
-            move_direction = Vector2.zero;
             Debug.Log("Manned");
     
         }
